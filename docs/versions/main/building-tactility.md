@@ -11,7 +11,7 @@ git clone --recurse-submodules -j8 https://github.com/ByteWelder/Tactility.git
 ## ESP32 Build Environment
 
 - ESP32 (any?)
-- [esp-idf 5.3.2](https://docs.espressif.com/projects/esp-idf/en/v5.3.2/esp32/get-started/index.html) or a newer v5.3.x
+- [esp-idf 5.4](https://docs.espressif.com/projects/esp-idf/en/v5.4/esp32/get-started/index.html) or a newer v5.4.x
 
 ## Build an ESP32 variant
 
