@@ -3,4 +3,5 @@
 - [Building Tactility](building-tactility.md)
 - [Build Scripts](build-scripts.md)
 - [Simulator](simulator.md)
+- [Board Development](board-development.md)
 - [Licenses & Copyrights](../licenses-and-copyrights.md)
