@@ -1,8 +1,9 @@
-# Apps
+# App Fundamentals
 
-Here are some notable behaviours:
-- Apps can be started and stopped: this is similar to create and destroy
-- Apps can be shown and hidden: when they are ready to render their UI, or when their UI is hidden
+Let's start with some notable behaviours:
+- Apps have a ledger that describes them: this is the `AppManifest`, which is found at `tt::app::AppManifest`.
+- Apps can be created and destroyed. You can call `tt::app::start()` to start an app.
+- Apps can be shown and hidden: when they are ready to render their UI, or when their UI is hidden. If an app starts another app, the original app is temporarily hidden, until the second app is destroyed.
 - Apps can start other apps. An app can return a result to the app that started it.
 - Apps can be started with parameters.
 
@@ -29,11 +30,11 @@ An app goes through these states:
 
 ```plantuml
 @startuml
-[*] --> onStart : app is created
-onStart --> onShow : app becomes visible
+[*] --> onCreate : app is created
+onCreate --> onShow : app becomes visible
 onShow --> onHide : app is no longer visible
-onHide --> onStop : app is preparing to be destroyed
-onStop --> [*] : app is destroyed
+onHide --> onDestroy : app is preparing to be destroyed
+onDestroy --> [*] : app is destroyed
 skinparam ranksep 25
 skinparam padding 2
 @enduml
@@ -41,10 +42,10 @@ skinparam padding 2
 
 Let's look at a scenario where an app launches another app:
 
-1. `first` app starts: `first.onStart()` -> `first.onShow()`
-2. `second` app starts: `first.onHide()` -> `second.onStart()` -> `second.onShow()`
-3. `second` app stops: `second.onHide()` -> `second.onStop()` -> `first.onShow()`
-4. `first` app stops: `first.onHide()` -> `first.onStop()`
+1. `first` app starts: `first.onCreate()` -> `first.onShow()`
+2. `second` app starts: `first.onHide()` -> `second.onCreate()` -> `second.onShow()`
+3. `second` app exits: `second.onHide()` -> `second.onDestroy()` -> `first.onShow()`
+4. `first` app exits: `first.onHide()` -> `first.onDestroy()`
 
 ## Registering new apps
 
@@ -83,7 +84,7 @@ int main(int argc, char* argv[]) {
 Interfaces are created with [lvgl](https://github.com/lvgl/lvgl) which has lots of [widgets](https://docs.lvgl.io/9.0/widgets/index.html)!
 Creating a touch-capable UI is [easy](https://docs.lvgl.io/9.0/get-started/quick-overview.html).
 
-When the application's `onStart()` function is called, you get access to `lv_obj_t* parent`.
+When the application's `onCreate()` function is called, you get access to `lv_obj_t* parent`.
 This parent is the root widget that is used to attach other widgets too.
 It's the root of the application's window.
 
@@ -173,7 +174,7 @@ The `App` class has these methods:
 - `void setResult(Result, std::unique_ptr<Bundle>)`
 - `bool hasResult()`
 
-They can be called at any time, but after `App::onStop()` is called, any calls to `setResult()` won't have an effect.
+They can be called at any time, but after `App::onDestroy()` is called, any calls to `setResult()` won't have an effect.
 
 #### **TactilitySDK**
 
@@ -181,7 +182,7 @@ TactilityC has these functions related to `AppHandle`:
 - `void tt_app_set_result(AppHandle, Result, BundleHandle)`
 - `bool tt_app_has_result(AppHandle)`
 
-They can be called at any time, but after `ExternalManifest::onStop` is called, any calls to `tt_app_context_set_result()` won't have an effect.
+They can be called at any time, but after `ExternalManifest::onDestroy` is called, any calls to `tt_app_context_set_result()` won't have an effect.
 
 <!-- tabs:end -->
 

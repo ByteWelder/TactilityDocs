@@ -51,6 +51,10 @@ Create a `sdkconfig.board.yourboard` file. It's good to use one of the other boa
 
 Make a new folder in `Boards/`.
 
+Look at other board projects to see how they are set up. The T-Deck is likely one of the better reference implementations.
+Keep in mind that other boards might have the same or similar hardware, so you can possibly copy parts of their implementations.
+(e.g. the display and/or touch driver)
+
 ### CMake Filtering
 
 `CMakeLists.txt` and `Tactility/CMakeLists.txt` have filtering set up for individual boards or architectures.

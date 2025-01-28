@@ -1,4 +1,4 @@
-- [Apps](apps.md)
+- [App Concepts](app-concepts.md)
 - [Project Structure](project-structure.md)
 - [Building Tactility](building-tactility.md)
 - [Build Scripts](build-scripts.md)

@@ -21,7 +21,7 @@ Run this:
 Buildscripts/build.sh <board-name>
 ```
 
-`<board_name>` is the the last part of the names of the boards in `./sdkconfig.board.<board-name>`.
+`<board_name>` is the last part of the names of the boards in `./sdkconfig.board.<board-name>`.
 
 For example:
 

@@ -1,7 +1,13 @@
-- [Apps](apps.md)
-- [Project Structure](project-structure.md)
-- [Building Tactility](building-tactility.md)
-- [Build Scripts](build-scripts.md)
-- [Simulator](simulator.md)
-- [Board Development](board-development.md)
-- [Licenses & Copyrights](../licenses-and-copyrights.md)
+- App basics
+  - [App fundamentals](app-fundamentals.md)
+  - [Create an internal app](create-internal-app.md)
+- Hardware
+  - [HAL fundamentals](hal-fundamentals.md)
+  - [Board Development](board-development.md)
+- Core concepts
+  - [Project Structure](project-structure.md)
+  - [Building Tactility](building-tactility.md)
+  - [Build Scripts](build-scripts.md)
+  - [Simulator](simulator.md)
+- Other
+  - [Licenses & Copyrights](../licenses-and-copyrights.md)
