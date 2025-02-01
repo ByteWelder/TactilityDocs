@@ -1,9 +1,11 @@
 # Build Scripts
 
 Here's an overview of the most important scripts in the `Buildscripts/` folder.
+Note that:
 
-Note that all scripts must be executed from the root project folder.
-They also require to have `idf.py` on your path.
+- These are only officially supported for Linux with Bash.
+- All scripts must be executed from the root project folder.
+- They require to have `idf.py` on your path.
 
 ### build.sh
 
