@@ -1,12 +1,14 @@
 # Simulator
 
+## Software Requirements
+
+C++23 compiler. If you're running Ubuntu, this means you need Ubuntu 24.04 or newer.
+
 ## Running the official Simulator build
 
 *(Linux)*
 
 If you only want to run the simulator from a downloaded Tactility release, you only need the `mesa` and/or `mesa-util` dependencies.
-
-Note: On Ubuntu 22.04, you might need to set `export LIBGL_ALWAYS_SOFTWARE=1` before running the executable.
 
 *(Windows 11)*
 
@@ -56,8 +58,6 @@ Then go to the `Data/` folder and start the executable from there:
 cd Data
 ../buildsim/App/AppSim
 ```
-
-Note: on Ubuntu 22.04, you need to have `export LIBGL_ALWAYS_SOFTWARE=1` in your shell environment.
 
 ## Building on native Windows
 
