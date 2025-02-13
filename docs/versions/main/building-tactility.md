@@ -54,46 +54,14 @@ Once ESP-IDF is installed, click "File", then "Open Folder".
 
 The "Import ESP-IDF Project" option in the extension as [mentioned in the ESP-IDF documentation](https://docs.espressif.com/projects/vscode-esp-idf-extension/en/latest/startproject.html#esp-idf-existing-esp-idf-project) doesn't seem to work with Tactility.
 
-Ignore the "Scan for kits" popup at the top, if it doesn't auto close shortly just hit escape.
+If you installed the CMake extension: Ignore the "Scan for kits" popup at the top, if it doesn't auto close shortly just hit escape.
 
 Click the "ESP-IDF: Explorer" extension on the left side panel, click "Advanced", "Add .vscode subdirectory files".
 This adds the `.vscode` folder to the project with `c_cpp_properties.json`, `launch.json` and `settings.json`.
 
-Take a look at `c_cpp_properties.json`. It should look something like this:
-```json
-{
-    "configurations": [
-        {
-            "name": "ESP-IDF",
-            "compilerPath": "${config:idf.toolsPathWin}\\tools\\xtensa-esp-elf\\esp-13.2.0_20240530\\xtensa-esp-elf\\bin\\xtensa-esp32s3-elf-gcc.exe",
-            "compileCommands": "${config:idf.buildPath}/compile_commands.json",
-            "includePath": [
-                "${config:idf.espIdfPathWin}/**",
-                "${config:idf.espIdfPathWin}/components/**",
-                "${workspaceFolder}/**"
-            ],
-            "browse": {
-                "path": [
-                    "${config:idf.espIdfPathWin}/components",
-                    "${workspaceFolder}"
-                ],
-                "limitSymbolsToIncludedHeaders": true
-            }
-        }
-    ],
-    "version": 4
-}
-```
+Take a look at `c_cpp_properties.json`. It should contain a `compilerPath` that refers to your ESP-IDF installation.
 
-You can also double-check `settings.json`. Make sure it matches the ESP-IDF version with the version mentioned earlier in the docs. It will look somewhat like this:
-
-```json
-{
-  "C_Cpp.intelliSenseEngine": "default",
-  "idf.espIdfPathWin": "C:\\Users\\teron\\esp\\v5.4\\esp-idf",
-  "idf.toolsPathWin": "C:\\Users\\teron\\.espressif"
-}
-```
+You can also double-check `settings.json`. It should refer to the ESP-IDF installation path. Make sure it matches the ESP-IDF version with the version mentioned earlier in the docs.
 
 - Click "File > Save Workspace as..." as save the `Tactiliy.code-workspace` to the Tactility folder.
 - Click the "ESP-IDF: Explorer" extension on the left side panel, click "Open ESP-IDF Terminal".
@@ -108,5 +76,44 @@ Run `.\Buildscripts\release.ps1 <board name>`
 For example: `.\Buildscripts\release.ps1 cyd-2432S024c`
 Find the executables in the release folder.
 
-Copy the `tasks.json` to the `.vscode` folder to have some easy build / release tasks to run with the command palette or one of the many task extensions (e.g. task explorer).
+Considering making a `tasks.json` and store it in the `.vscode` folder to have some easy build / release tasks to run with the command palette or one of the many task extensions (e.g. task explorer):
 
+```json
+{
+    "version": "2.0.0",
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "powershell.exe",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-Command ${config:idf.espIdfPathWin}\\export.ps1;"
+                ]
+            }
+        }
+    },
+    "problemMatcher": [],
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+    },
+    "tasks": [
+        {
+            "label": "[Build] CYD_2432S024C",
+            "type": "shell",
+            "command": ".\\Buildscripts\\build.ps1 cyd-2432S024c"
+        },
+        {
+            "label": "[Release] CYD_2432S024C",
+            "type": "shell",
+            "command": ".\\Buildscripts\\release.ps1 cyd-2432S024c"
+        }
+    ]
+}
+```
