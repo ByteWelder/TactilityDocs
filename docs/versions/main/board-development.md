@@ -33,9 +33,11 @@ might stall the render thread.
 
 ### Drivers
 
-You can find many of drivers at [components.espressif.com](https://components.espressif.com/).
+Re-use existing drivers from:
+- Tactility at `Drivers/`
+- [components.espressif.com](https://components.espressif.com/) and write your own wrappers. Look at Tactility's `Drivers/` for examples.
 
-Alternatively, you can implement your own or refactor another open source driver. 
+Alternatively, you can implement your own or refactor another open source driver.
 
 ## Setting Up A New Board
 
