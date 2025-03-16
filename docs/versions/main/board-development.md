@@ -57,10 +57,9 @@ Look at other board projects to see how they are set up. The T-Deck is likely on
 Keep in mind that other boards might have the same or similar hardware, so you can possibly copy parts of their implementations.
 (e.g. the display and/or touch driver)
 
-### CMake Filtering
+### CMake Board Mapping
 
-`CMakeLists.txt` and `Tactility/CMakeLists.txt` have filtering set up for individual boards or architectures.
-Make sure you update these so your board gets loaded.
+`Buildscripts/board.cmake` maps the board id to the board project name. Make sure you update it so your board gets loaded.
 
 ### Configure App project
 
