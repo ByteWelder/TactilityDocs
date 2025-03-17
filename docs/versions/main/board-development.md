@@ -63,9 +63,7 @@ Keep in mind that other boards might have the same or similar hardware, so you c
 
 ### Configure App project
 
-In `App/`, add your board as a dependency in the `CMakeLists.txt`.
-
-Update the `Boards.h` to include your board.
+Update `App/Source/Boards.h` to include your board.
 
 ### Continuous Integration
 
