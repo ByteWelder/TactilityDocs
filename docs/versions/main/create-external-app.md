@@ -1,7 +1,11 @@
-# External Apps
+# Create An External App
+
+[App Fundamentals](app-fundamentals.md) will teach you all the basics.
 
 An example app can be found in the main repository in the [ExternalApps](https://github.com/ByteWelder/Tactility/tree/main/ExternalApps) folder.
-The projects in this folder are standalone projects. They output an `.app.elf` file. 
+Make a copy and use it as a template to build your own.
+
+The projects in `ExternalApps/` folder are standalone projects. They output an `.app.elf` file. 
 
 ## Get the SDK
 

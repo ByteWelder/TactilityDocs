@@ -1,6 +1,7 @@
 - App basics
   - [App fundamentals](app-fundamentals.md)
   - [Create an internal app](create-internal-app.md)
+  - [Create an external app](create-external-app.md)
 - Hardware
   - [HAL fundamentals](hal-fundamentals.md)
   - [Board Development](board-development.md)
