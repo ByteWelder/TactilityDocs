@@ -45,6 +45,8 @@ Clone the repository:
 git clone https://github.com/ByteWelder/Tactility.git --recurse-submodules
 ```
 
+Ubuntu 22.04 users should run `export LIBGL_ALWAYS_SOFTWARE=1`
+
 From the project folder, run:
 
 ```sh
