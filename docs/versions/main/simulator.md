@@ -29,7 +29,8 @@ To run the simulator you will need to install these dependencies:
 
 *(Ubuntu)*
 ```sh
-sudo apt-get install -y build-essential git cmake mesa-utils
+sudo apt-get install -y build-essential git cmake mesa-utils libsdl2-dev
+export LIBGL_ALWAYS_SOFTWARE=1
 ```
 
 *(Arch)*
@@ -38,14 +39,13 @@ pacman -S base-devel git cmake mesa
 ```
 
 Other Linux distros are also expected to work with either X11 or Wayland, as SDL is compiled with both enabled.
+If you notice that X11 or Wayland options are not on when compiling SDL, try installing the SDL development package for your distro.
 
 Clone the repository:
 
 ```sh
 git clone https://github.com/ByteWelder/Tactility.git --recurse-submodules
 ```
-
-Ubuntu 22.04 users should run `export LIBGL_ALWAYS_SOFTWARE=1`
 
 From the project folder, run:
 
