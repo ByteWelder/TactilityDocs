@@ -20,7 +20,8 @@ During Tactility OS development, we use this method.
 1. Ensure the project is built for your target:<br/>Run `idf.py build` from the Tactility root folder.
 2. Run `Buildscripts/release-sdk-current.sh`
 3. Your SDK is now available at `release/TactilitySDK`
-4. Open the app's directory and run `idf.py elf_app` (that's `elf_app` and not `build`!)
+4. Open the app's directory and run `idf.py build` (note: this shows an error at the end, but succesfully creates the elf file in the build folder)
+5. Subsequent build commands are done with `idf.py elf` (these shouldn't result in an error)
 
 ### Method 2: Build from TactilitySDK
 
@@ -29,5 +30,7 @@ The provided zipfiles can be deployed anywhere.
 
 When you compile one of the `ExternalApps` projects, make sure that `TACTILITY_SDK_PATH` environment variable is set to the SDK path.
 
-Build it from the app folder by running `idf.py elf_app` (that's `elf_app` and not `build`!)
+Build it from the app folder by running `idf.py build` (note: this shows an error at the end, but succesfully creates the elf file in the build folder)
+
+Subsequent build commands are done with `idf.py elf` (these shouldn't result in an error)
 
