@@ -1,5 +1,7 @@
 - Getting started
   - [Requirements](requirements.md)
+- Running Tactility
+  - [Configuration](configuration.md)
 - App basics
   - [App fundamentals](app-fundamentals.md)
   - [Create an internal app](create-internal-app.md)
