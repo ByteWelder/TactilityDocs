@@ -3,21 +3,21 @@
 ## Boot
 
 During the boot process, the system tries to load the `boot.properties` file from an SD card (if present and mounted).
-When it fails to load from SD card, it's loaded from `/data`.
+When it fails to load from SD card, it's loaded from `/data/settings`.
 
 Locations:
-- (optional) `/sdcard/boot.properties`
-- `/data/boot.properties`
+- (optional) `/sdcard/settings/boot.properties`
+- `/data/settings/boot.properties`
 
 Properties:
 - `launcherAppId`: The application identifier for the launcher app. This parameter is required. The default is "Launcher".
 - `autoStartAppId`: An optional application to start after the launcher is started. This parameter is optional. There is no default value.
 
-## Settings
+## System
 
-General system settings are stored in `settings.properties` which is loaded from `/data`
+General system settings are stored in `system.properties` which is loaded from `/data/settings`
 
-Location: `/data/settings.properties`
+Location: `/data/settings/system.properties`
 
 Properties:
 - `language`: The locale that determines the language. The default is "en-US". Supported languages: en-US, en-GB, nl-NL, nl-BE, fr-FR
@@ -27,7 +27,7 @@ Properties:
 
 ### Wi-Fi Internal Configuration
 
-The `/data` directory contains 2 types of files:
+The `/data/settings` directory contains 2 types of files:
 - `*.ap.properties` which holds the SSID files with encrypted passwords
 - `wifi.properties` which holds the Wi-Fi service's configuration
 
