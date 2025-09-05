@@ -1,6 +1,7 @@
-- Getting started
+- Get started
   - [Requirements](requirements.md)
-- Running Tactility
+  - [Installation](installation.md)
+- Using Tactility
   - [Configuration](configuration.md)
 - App basics
   - [App fundamentals](app-fundamentals.md)
