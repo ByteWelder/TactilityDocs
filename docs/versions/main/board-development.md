@@ -66,4 +66,4 @@ Update `App/Source/Boards.h` to include your board.
 
 ### Continuous Integration
 
-Update `.github/workflows/build-firmware.yml` and `.github/actions/build-firmware/action.yml`
+Update `.github/workflows/build-firmware.yml` and `Buildscripts/build-and-release-all.sh`
