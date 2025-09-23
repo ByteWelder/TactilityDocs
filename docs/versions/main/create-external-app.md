@@ -2,7 +2,7 @@
 
 [App Fundamentals](app-fundamentals.md) will teach you the basics.
 
-An example app can be found in the main repository in the [ExternalApps](https://github.com/ByteWelder/Tactility/tree/main/ExternalApps) folder. Make a copy and use it as a template to build your own.
+Example apps can be found in the [TactilityApps](https://github.com/ByteWelder/TactilityApps) project.
 
 Build the app:
 ```bash
@@ -45,3 +45,14 @@ python tactility.py bir 192.168.1.123
 python tactility.py brrr 192.168.1.123
 # Whatever floats your boat
 ```
+
+## TactilityC development
+
+When making changes to `TactilityC`, you'll need to build your own SDK locally:
+
+1. Open a terminal and navigate to the Tactility project root folder.
+2. Build the firmware for the relevant target (e.g. ESP32 S3) with `idf.py build`
+3. Make sure that the `release/` directory either doesn't exist or doesn't have a previous SDK in it.
+4. Run `Buildscripts/release-sdk-current.sh`
+5. Set environment variable `TACTILITY_SDK_PATH` - for example: `export TACTILITY_SDK_PATH=/path/to/Tactility/release/TactilitySDK`
+6. Run `tactility.py build esp32s3 --local-sdk` (change "esp32s3" to the relevant hardware target where applicable)
