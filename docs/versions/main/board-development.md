@@ -48,6 +48,8 @@ Define a new board in `App/Kconfig`.
 
 Create a `sdkconfig.board.yourboard` file. It's good to use one of the other boards of a similar architecture as reference.
 
+Devices with a large flash ROM (e.g. `16 MB`) will take long to flash. Consider making making a copy of `sdkconfig.board.yourboard` named `sdkconfig.board.yourboard.dev` with a `4 MB` partition table. The `.dev` files are ignored by git.
+
 ### Create Subproject
 
 Make a new folder in `Boards/`.

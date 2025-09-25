@@ -3,10 +3,11 @@
   - [Installation](installation.md)
 - Using Tactility
   - [Configuration](configuration.md)
-- App basics
-  - [App fundamentals](app-fundamentals.md)
-  - [Create an internal app](create-internal-app.md)
-  - [Create an external app](create-external-app.md)
+- App Development
+  - [Fundamentals](app-development/fundamentals.md)
+  - [Symbols](app-development/symbols.md)
+  - [Getting Started](app-development/getting-started.md)
+  - [Internal apps](app-development/internal-apps.md)
 - Hardware
   - [HAL fundamentals](hal-fundamentals.md)
   - [Board Development](board-development.md)
