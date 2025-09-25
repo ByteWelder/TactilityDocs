@@ -1,4 +1,4 @@
-# Internal APps
+# Internal Apps
 
 When it comes to internal applications, there are 2 variants:
 - System applications: these are built into the Tactility library
