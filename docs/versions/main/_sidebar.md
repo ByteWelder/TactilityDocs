@@ -1,20 +1,19 @@
-- Get started
-  - [Requirements](requirements.md)
-  - [Installation](installation.md)
 - Using Tactility
   - [Configuration](configuration.md)
+- Start Developing
+  - [Requirements](requirements.md)
+  - [Installation](installation.md)
 - App Development
   - [Fundamentals](app-development/fundamentals.md)
   - [Symbols](app-development/symbols.md)
   - [Getting Started](app-development/getting-started.md)
   - [Internal apps](app-development/internal-apps.md)
-- Hardware
-  - [HAL fundamentals](hal-fundamentals.md)
-  - [Board Development](board-development.md)
-- Core concepts
-  - [Project Structure](project-structure.md)
-  - [Building Tactility](building-tactility.md)
-  - [Build Scripts](build-scripts.md)
-  - [Simulator](simulator.md)
+- Tactility Development
+  - [HAL fundamentals](tactility-development/hal-fundamentals.md)
+  - [Project Structure](tactility-development/project-structure.md)
+  - [Board Development](tactility-development/board-development.md)
+  - [Building Tactility](tactility-development/building-tactility.md)
+  - [Build Scripts](tactility-development/build-scripts.md)
+  - [Simulator](tactility-development/simulator.md)
 - Other
   - [Licenses & Copyrights](../licenses-and-copyrights.md)
