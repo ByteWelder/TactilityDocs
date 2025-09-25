@@ -1,4 +1,48 @@
-# Create An External App
+# External Apps
+
+## Fundamentals
+
+Functions and variables in an external `.elf` file are referred to as "symbols". When you build an external app, it contains all the symbols
+of that app itself, but you're likely also using external dependencies such as libc or LVGL.
+
+The app refers to these symbols, but they don't actually exist inside its binary. When the app is loaded onto a device, a Tactility subsystem maps these symbols from the main firmware into the app. This mechanism is comparable to attaching a dynamically linked library where Tactility is the one facilitating the "library" functions.
+
+These are the responsibilities of each component:
+
+### Device Firmware
+
+The device firmware contains symbol mappings:
+
+It exposes a limited set of functions to the external apps. It stores a map that ties a function pointer to a function name. Function names are stripped by the ESP-IDF build system, so we have to manually map them. This mapping is defined in `tt_init.cpp` and is hard-wired into the firmware.
+
+### TactilitySDK
+
+TactilitySDK exposes symbol interfaces/names to the external apps:
+
+It includes headers for TactilityC, LVGL and more. It exposes Tactility/LVGL/libc functionality to external apps. Linking with the app happens dynamically, so its symbols are not embedded statically into the app.
+
+### External apps
+
+Apps only contain the symbols defined by its own source files. All other symbols must be present in the main firmware **and** exposed explicitly by `tt_init.cpp` in `TactilityC`
+
+## How to expose new symbols
+
+### Exposing a libc or LVGL symbol
+
+1. Add the symbol to `tt_init.cpp`.
+2. Build a new device firmware and flash it.
+
+Note: You don't need to publish and use a new `TactilitySDK`, as the libc function is available via an existing header file that is available to any external app project.
+
+### Exposing a new Tactility symbol
+
+1. Expose the symbol in `TactilityC` via a `.c` and `.h` file: this will wrap the C++ function into a C function and make it available to the apps.
+2. Add the new `TactilityC` symbol to `tt_init.cpp`.
+3. Build a new device firmware and flash it.
+4. Build `TactilitySDK`
+5. Build your external app with the new SDK.
+
+## Create An External App
 
 [App Fundamentals](app-fundamentals.md) will teach you the basics.
 
@@ -14,7 +58,7 @@ python tactility.py build esp32s3
 
 Documentation for this command can be found [here](https://github.com/ByteWelder/TactilityTool).
 
-## Install and test your app
+### Install and test your app
 
 First, make sure to set up the Tactility device:
 - Wi-Fi should be on
@@ -45,6 +89,13 @@ python tactility.py bir 192.168.1.123
 python tactility.py brrr 192.168.1.123
 # Whatever floats your boat
 ```
+
+## Debugging external apps
+
+This hasn't been investigated yet, but the [approach from Zephyr](https://docs.zephyrproject.org/latest/services/llext/debug.html) might work.
+In the case of Tactility, the mentioned breakpoint could be placed at `esp_elf_relocate()`
+
+**Warning:** This is untested and might not work!
 
 ## TactilityC development
 
