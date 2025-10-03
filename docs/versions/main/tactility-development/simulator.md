@@ -38,6 +38,11 @@ export LIBGL_ALWAYS_SOFTWARE=1
 pacman -S base-devel git cmake mesa
 ```
 
+*(Fedora)*
+```sh
+sudo dnf install git cmake SDL2_gfx-devel.x86_64 libXext-devel.x86_64 wayland-devel.x86_64 libxkbcommon-devel.x86_64
+```
+
 Other Linux distros are also expected to work with either X11 or Wayland, as SDL is compiled with both enabled.
 If you notice that X11 or Wayland options are not on when compiling SDL, try installing the SDL development package for your distro.
 
