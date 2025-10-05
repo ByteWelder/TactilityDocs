@@ -1,10 +1,16 @@
 # App Development - Getting Started
 
-## Create an app
+## Examples
 
-Example apps can be found in the [TactilityApps](https://github.com/ByteWelder/TactilityApps) project.
+You can find examples in the [TactilityApps](https://github.com/ByteWelder/TactilityApps) project.
 
-Build the app:
+Each app in the [Apps/](https://github.com/ByteWelder/TactilityApps/tree/main/Apps) directory is its own standalone project.
+
+## Building
+
+After you went through the [Fundamentals](app-development/fundamentals.md) to set up a new application,
+or if you downloaded one of the example apps, you can build it:
+
 ```bash
 # Either build for all supported hardware:
 python tactility.py build
@@ -14,7 +20,7 @@ python tactility.py build esp32s3
 
 Documentation for this command can be found [here](https://github.com/ByteWelder/TactilityTool).
 
-## Install and run
+## Installing and running   
 
 First, make sure to set up the Tactility device:
 - Wi-Fi should be on
