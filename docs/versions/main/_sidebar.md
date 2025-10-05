@@ -7,7 +7,6 @@
   - [Fundamentals](app-development/fundamentals.md)
   - [Symbols](app-development/symbols.md)
   - [Getting Started](app-development/getting-started.md)
-  - [Internal apps](app-development/internal-apps.md)
 - Tactility Development
   - [HAL fundamentals](tactility-development/hal-fundamentals.md)
   - [Project Structure](tactility-development/project-structure.md)

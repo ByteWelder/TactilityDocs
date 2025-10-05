@@ -17,6 +17,8 @@ Use existing ESP32 sdkconfig configurations as a reference.
 
 ### Display
 
+A display is optional.
+
 If the resolution is higher (e.g. 480x240 or larger) then performance tends to degrade.
 
 Avoid software manipulation of pixels. For example: the byte swapping option in the esp_lvgl_port library.
@@ -24,8 +26,7 @@ This will likely degrade performance severely.
 
 ### Input
 
-A touch screen is not a requirement, but a recommendation at this point.
-You can create other types of input devices to navigate through the LVGL interface.
+There are various types of input devices: touchscreens, encoders and keyboards.
 
 Note that when an input driver is not well implemented, it might degrade performance as it
 might stall the render thread.

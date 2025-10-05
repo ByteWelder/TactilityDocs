@@ -6,8 +6,8 @@ During the boot process, the system tries to load the `boot.properties` file fro
 When it fails to load from SD card, it's loaded from `/data/settings`.
 
 Locations:
-- (optional) `/sdcard/settings/boot.properties`
 - `/data/settings/boot.properties`
+- (optional) `/sdcard/settings/boot.properties`
 
 Properties:
 - `launcherAppId`: The application identifier for the launcher app. This parameter is required. The default is "Launcher".
