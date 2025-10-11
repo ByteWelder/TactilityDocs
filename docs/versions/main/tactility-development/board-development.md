@@ -43,7 +43,7 @@ Alternatively, you can implement your own or refactor another open source driver
 
 ### Update Kconfig
 
-Define a new board in `App/Kconfig`.
+Define a new board in `Firmware/Kconfig`.
 
 ### sdkconfig
 
@@ -65,7 +65,7 @@ Keep in mind that other boards might have the same or similar hardware, so you c
 
 ### Configure App project
 
-Update `App/Source/Boards.h` to include your board.
+Update `Firmware/Source/Boards.h` to include your board.
 
 ### Continuous Integration
 
