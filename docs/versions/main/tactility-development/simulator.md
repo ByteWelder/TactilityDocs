@@ -63,7 +63,7 @@ Then go to the `Data/` folder and start the executable from there:
 
 ```sh
 cd Data
-../buildsim/App/AppSim
+../buildsim/Firmware/AppSim
 ```
 
 ## Building on native Windows
