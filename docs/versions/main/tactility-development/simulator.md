@@ -56,14 +56,14 @@ From the project folder, run:
 
 ```sh
 cmake -S ./ -B buildsim
-cmake --build buildsim --target AppSim
+cmake --build buildsim --target FirmwareSim
 ```
 
 Then go to the `Data/` folder and start the executable from there:
 
 ```sh
 cd Data
-../buildsim/Firmware/AppSim
+../buildsim/Firmware/FirmwareSim
 ```
 
 ## Building on native Windows
