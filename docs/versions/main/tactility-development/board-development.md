@@ -59,14 +59,12 @@ Look at other board projects to see how they are set up. The T-Deck is likely on
 Keep in mind that other boards might have the same or similar hardware, so you can possibly copy parts of their implementations.
 (e.g. the display and/or touch driver)
 
+Make sure there's a `extern const tt::hal::Configuration hardwareConfiguration = { .. }` variable declared. Place it in a file named `Configuration.cpp`
+
 ### CMake Board Mapping
 
 `Buildscripts/board.cmake` maps the board id to the board project name. Make sure you update it so your board gets loaded.
 
-### Configure App project
-
-Update `Firmware/Source/Boards.h` to include your board.
-
 ### Continuous Integration
 
-Update `.github/workflows/build-firmware.yml` and `Buildscripts/build-and-release-all.sh`
+Update the board matrix in `.github/workflows/build-firmware.yml`
