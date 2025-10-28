@@ -53,17 +53,12 @@ Devices with a large flash ROM (e.g. `16 MB`) will take long to flash. Consider 
 
 ### Create Subproject
 
-Make a new folder in `Boards/`.
+Make a new folder in `Boards/`: the name should match board identifier that was set in the sdkconfig file.
 
-Look at other board projects to see how they are set up. The T-Deck is likely one of the better reference implementations.
-Keep in mind that other boards might have the same or similar hardware, so you can possibly copy parts of their implementations.
-(e.g. the display and/or touch driver)
+Look at other board projects to see how they are set up. The LilyGO T-Deck is one of the better reference implementations.
+Keep in mind that other boards might have the same or similar hardware, so you can possibly copy parts of their implementations. (e.g. the display and/or touch driver)
 
-Make sure there's a `extern const tt::hal::Configuration hardwareConfiguration = { .. }` variable declared. Place it in a file named `Configuration.cpp`
-
-### CMake Board Mapping
-
-`Buildscripts/board.cmake` maps the board id to the board project name. Make sure you update it so your board gets loaded.
+Make sure there's a `extern const tt::hal::Configuration hardwareConfiguration = { .. }` variable declared. It needs to be declared exactly like this. Place it in a file named `Configuration.cpp`
 
 ### Continuous Integration
 
