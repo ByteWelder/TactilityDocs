@@ -51,6 +51,12 @@ Create a `sdkconfig.board.yourboard` file. It's good to use one of the other boa
 
 Devices with a large flash ROM (e.g. `16 MB`) will take long to flash. Consider making making a copy of `sdkconfig.board.yourboard` named `sdkconfig.board.yourboard.dev` with a `4 MB` partition table. The `.dev` files are ignored by git.
 
+### devices.properties
+
+Make sure to edit `Buildscripts/CDN/devices.properties`
+
+This file is related to uploading the firmwares to the CDN after merging your changes. The CDN is used by the web installer.
+
 ### Create Subproject
 
 Make a new folder in `Boards/`: the name should match board identifier that was set in the sdkconfig file.
