@@ -16,3 +16,4 @@
   - [Simulator](tactility-development/simulator.md)
 - Other
   - [Licenses & Copyrights](../licenses-and-copyrights.md)
+  - [Support](../support.md)
