@@ -7,10 +7,13 @@
   - [Fundamentals](app-development/fundamentals.md)
   - [Symbols](app-development/symbols.md)
   - [Getting Started](app-development/getting-started.md)
-- Tactility Development
+- Device Development
+  - [Hardware Considerations](device-development/hardware-considerations.md)
+  - [Guide](device-development/guide.md)
+  - [Device Properties](device-development/device-properties.md)
+- OS Development
   - [HAL fundamentals](tactility-development/hal-fundamentals.md)
   - [Project Structure](tactility-development/project-structure.md)
-  - [Board Development](tactility-development/board-development.md)
   - [Building Tactility](tactility-development/building-tactility.md)
   - [Build Scripts](tactility-development/build-scripts.md)
   - [Simulator](tactility-development/simulator.md)
