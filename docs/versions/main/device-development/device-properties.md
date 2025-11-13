@@ -10,9 +10,9 @@ If a property value is a boolean, then it must be the string literal `true` or `
 
 ## [general]
 
-- `vendor`: required text value representing the vendor of the board. If there is no company name, then it can be left empty or set to the same name as the board name (e.g. "LilyGO", "", "unPhone")
-- `name`: required text value representing the board name (e.g. "T-Deck")
-- `incubating`: optional boolean used for marking boards as in-development and/or having issues in their implementation (defaults to `false`)
+- `vendor`: required text value representing the vendor of the device. If there is no company name, then it can be left empty or set to the same name as the device name (e.g. "LilyGO", "", "unPhone")
+- `name`: required text value representing the device name (e.g. "T-Deck")
+- `incubating`: optional boolean used for marking devices as in-development and/or having issues in their implementation (defaults to `false`)
 
 ## [hardware]
 

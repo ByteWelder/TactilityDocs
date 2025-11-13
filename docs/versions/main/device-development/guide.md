@@ -8,22 +8,20 @@ Define the new device in `Firmware/Kconfig`.
 
 ## Create project folder
 
-Make an empty new folder in `Boards/`: the name should match board identifier that was set in the sdkconfig file.
+Make an empty new folder in `Devices/`: the name should match device identifier that was set in the sdkconfig file.
 
 ## Create device.properties
 
-The `sdkconfig` is generated from `device.properties` file in `Boards/your-device-id/`
+The `sdkconfig` is generated from `device.properties` file in `Devices/your-device-id/`
+
+Run `python device.py your-device-id` to generate the `sdkconfig` file for the device. You can add `--dev` to generate partitions with a `4 MB` footprint for faster flashing.
 
 See the [device.properties documentation](device-development/device-properties.md) for more info.
 
-Create a `sdkconfig.board.yourboard` file. It's good to use one of the other boards of a similar architecture as reference.
-
-Devices with a large flash ROM (e.g. `16 MB`) will take long to flash. Consider making making a copy of `sdkconfig.board.yourboard` named `sdkconfig.board.yourboard.dev` with a `4 MB` partition table. The `.dev` files are ignored by git.
-
 ## Implementation
 
-Look at other board projects to see how they are set up. The LilyGO T-Deck is one of the better reference implementations.
-Keep in mind that other boards might have the same or similar hardware, so you can possibly copy parts of their implementations. (e.g. the display and/or touch driver)
+Look at other device projects to see how they are set up. The LilyGO T-Deck is one of the better reference implementations.
+Keep in mind that other devices might have the same or similar hardware, so you can possibly copy parts of their implementations. (e.g. the display and/or touch driver)
 
 Make sure there's a `extern const tt::hal::Configuration hardwareConfiguration = { .. }` variable declared. It needs to be declared exactly like this. Place it in a file named `Configuration.cpp`
 
@@ -43,4 +41,4 @@ If you find `esp_lcd` or `esp_lcd_touch` drivers, you can implement them more ea
 
 ## Continuous Integration
 
-Update the board matrix in `.github/workflows/build-firmware.yml`
+Update the device matrix in `.github/workflows/build-firmware.yml`
