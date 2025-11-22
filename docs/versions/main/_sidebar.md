@@ -12,11 +12,11 @@
   - [Guide](device-development/guide.md)
   - [Device Properties](device-development/device-properties.md)
 - OS Development
-  - [HAL fundamentals](tactility-development/hal-fundamentals.md)
-  - [Project Structure](tactility-development/project-structure.md)
-  - [Building Tactility](tactility-development/building-tactility.md)
-  - [Build Scripts](tactility-development/build-scripts.md)
-  - [Simulator](tactility-development/simulator.md)
+  - [HAL fundamentals](os-development/hal-fundamentals.md)
+  - [Project Structure](os-development/project-structure.md)
+  - [Building Tactility](os-development/building-tactility.md)
+  - [Build Scripts](os-development/build-scripts.md)
+  - [Simulator](os-development/simulator.md)
 - Other
   - [Licenses & Copyrights](../licenses-and-copyrights.md)
   - [Support](../support.md)
