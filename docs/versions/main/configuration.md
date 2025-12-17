@@ -25,15 +25,11 @@ Properties:
 
 ## Wi-Fi
 
-### Wi-Fi Internal Configuration
+## Wi-Fi Access Point Provisioning
 
-The `/data/settings` directory contains 2 types of files:
-- `*.ap.properties` which holds the SSID files with encrypted passwords
-- `wifi.properties` which holds the Wi-Fi service's configuration
+Access point provisioning files can be placed in `/data/settings` and/or `/sdcard/settings`
 
-### Wi-Fi SD Card Configuration
-
-Wi-Fi can be automatically configured from SD card files: For each access point that you want to configure, create a unique file in the root of the SD card with the name `[name].ap.properties` where `[name]` can be any text you like.
+For each access point that you want to configure, create a unique file in the root of the SD card with the name `[name].ap.properties` where `[name]` can be any text you like.
 
 The file content looks like this:
 
@@ -45,7 +41,18 @@ autoRemovePropertiesFile=false
 ```
 
 Properties:
+
 - `ssid`: The name of the access point
-- `password`: The plaintext password
+- `password`: The plain text password
 - `autoConnect`: Whether Tactility should automatically connect to it when Wi-Fi is enabled (values "true" or "false")
 - `autoRemovePropertiesFile`: Whether to automatically delete the files from SD card once this configuration has been successfully applied. This is a security feature.
+
+## Wi-Fi Settings
+
+These settings are found in `/data/settings/wifi.properties`
+
+Properties:
+
+- `enableOnBoot`: turn on Wi-Fi service at boot (values "true" or "false")
+
+
